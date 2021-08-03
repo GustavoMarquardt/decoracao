@@ -1,0 +1,32 @@
+<mat-sidenav #drawer class="sidenav mat-elevation" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+
+      <mat-toolbar>
+        <span>Decoração Presentes</span>
+            <div>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item routerLink="sing-in" routerLinkActive="active-list-item">
+                      <mat-icon>dialpad</mat-icon>
+                      <span>login</span>
+                    </button>
+                    <!-- <button mat-menu-item disabled>
+                      <mat-icon>voicemail</mat-icon>
+                      <span>Check voice mail</span>
+                    </button> -->
+                    <button mat-menu-item routerLink="administrador" routerLinkActive="active-list-item">
+                      <mat-icon>notifications_off</mat-icon>
+                      <span>Administrador</span>
+                    </button>
+                    <button mat-menu-item routerLink="home" routerLinkActive="active-list-item" (click)="LogOut()">
+                      <mat-icon>notifications_off</mat-icon>
+                      <span>LogOut</span>
+                    </button>
+                  </mat-menu>
+            </div>
+      </mat-toolbar>
+        <router-outlet></router-outlet>    
+</mat-sidenav>

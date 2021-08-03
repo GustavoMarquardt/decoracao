@@ -1,0 +1,67 @@
+<form  #f="ngForm" (ngSubmit)="onSubmit()">
+  <div style="width: 1000px !important;">
+      <div class=" cima container row justify-content-center">
+        Mamis coloque fotos deitadas por favor :D
+        </div>
+        <div class="row d-flex justify-content-center m-1 mt-5 ">
+          <label>
+              <div class="justify-content-center m-1 mt-2 ">
+                  <img [src]="url" height="200"> <br/>
+              </div>
+              <input 
+                type="file"
+                required
+                #filterName
+                (change)="onSelectFile($event)"
+                >
+            </label>                      
+      </div>
+        <div class=" cima container row">
+          <div class="name col-sm mt-3">
+            <mat-form-field appearance="fill">
+              <mat-label>Selecione tipo de serviço</mat-label>
+              <mat-select [(value)]="selected" [(ngModel)]="categoryCategory">
+                  <mat-option *ngFor="let tipo of categoryTabela" [value]="tipo">
+                      {{tipo.category}}
+                  </mat-option>
+              </mat-select>
+            </mat-form-field>
+            </div>
+            <div class="col-sm mt-3">
+              <mat-form-field class="sub-service-full-width" appearance="fill">
+                  <mat-label>Nome do produto</mat-label>
+                  <input matInput name="name" id="nameService"[(ngModel)]="produto.name" required>
+              </mat-form-field>
+          </div> 
+        </div> 
+          </div>
+          <div class="container row">
+            <div class="col-sm mt-3">
+              <mat-form-field class="sub-service-full-width" appearance="fill">
+                <mat-label>Preço</mat-label>
+                <input matInput type="number"name="price" id="nameService"[(ngModel)]="price" required>
+            </mat-form-field>
+            </div>
+              <div class="col-sm mt-3">
+                <mat-form-field class="sub-service-full-width" appearance="fill">
+                  <mat-label>Quantidade no estoque</mat-label>
+                  <input matInput type="number"name="amount" id="nameService"[(ngModel)]="amount" required>
+              </mat-form-field>
+            </div>
+            </div>
+            <div class="observacoes">
+              <mat-form-field class="col-sm" appearance="outline">
+                <mat-label>Descrição do produto</mat-label>                  
+                  <textarea matInput [(ngModel)]="produto.description" placeholder="Coloque uma observação." name="descricao"
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="10"></textarea>
+                  </mat-form-field>
+            </div>
+            <div class="col-sm justify-content-center">
+              <button mat-icon-button color="#a09ea0a1" (click)="onSubmit()">
+                  ADICIONAR
+                 </button> 
+            </div>  
+</form>

@@ -1,24 +1,3 @@
-.example-container{
-    background-color:#422E09;
-}
-
-.example-button-row{
-    background-color:#422E09;
-}
-
-h4{
-    color: azure;
-}
-
-.top-bar{
-    background-color: #422E09;
-}
-
-h4{
-    font-weight: 200;
-    font-size: medium;
-}
-
-.teste{
-    background-color: black;
+mat-sidenav{
+    background-color: aqua;
 }

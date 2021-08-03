@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { LocationStrategy,HashLocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 //firebase
 import { AngularFireModule } from '@angular/fire';
@@ -31,6 +32,17 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CatalogoComponent } from './screens/app/catalogo/catalogo.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import { AdministradorComponent } from './screens/app/administrador/administrador.component';
+import { AddProdutoComponent } from './screens/app/administrador/add-produto/add-produto.component';
+import { CategoryComponent } from './screens/app/administrador/category/category.component';
+import { SingUpComponent } from './screens/app/sing-up/sing-up.component';
+import { SinInComponent } from './screens/app/sin-in/sin-in.component';
+import { VerifyEmailComponent } from './screens/app/verify-email/verify-email.component';
+
+
+
+
 
 
 @NgModule({
@@ -38,6 +50,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     AppComponent,
     NavbarComponent,
     CatalogoComponent,
+    AdministradorComponent,
+    AddProdutoComponent,
+    CategoryComponent,
+    SingUpComponent,
+    SinInComponent,
+    VerifyEmailComponent,
+
 
   ],
   imports: [
@@ -45,6 +64,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule,
     MatSidenavModule,
     MatIconModule,
@@ -60,6 +80,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatButtonModule,
     MatExpansionModule,
     MatToolbarModule,
+    MatMenuModule,
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters:false
+    }),
   ],
   providers: [
     {

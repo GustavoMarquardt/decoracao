@@ -1,0 +1,43 @@
+<form  #f="ngForm">
+    <div style="width: 1000px !important;">
+        <div class=" cima container row">
+            <h4>
+                Mãe aqui você adiciona os tipos de produtos, como serão classificados
+            </h4>
+            <div class="col-sm">
+                <mat-form-field class="sub-service-full-width" appearance="fill">
+                    <mat-label>Nome da categoria</mat-label>
+                    <input matInput name="nameService" id="nameService"[(ngModel)]="categoryClass.category" required>
+                </mat-form-field>
+            </div>
+            <div class="col-sm justify-content-left">
+                <button mat-icon-button color="#a09ea0a1" (click)="onSubmit()">
+                    <mat-icon class="mat-18" class="material-icons">add</mat-icon>
+                   </button> 
+              </div>  
+              <div class="col-sm justify-content-left">
+                <mat-table [dataSource]="categoryTabela" name="tabela" matSort class="mat-elevation-z8 mt-2 mb-3 mr-2" >
+
+                   
+                    <ng-container matColumnDef="servico">            
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="serviço"> Category </mat-header-cell>
+                      <mat-cell *matCellDef="let class"> {{class.category}} </mat-cell>        
+                      </ng-container>
+                     
+                      <ng-container matColumnDef="deletar">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="opcoes"> Editar </mat-header-cell>
+                          <mat-cell *matCellDef="let category" > 
+                            <button mat-icon-button color="#00659D" (click)="DeletCategory(category)">
+                              <mat-icon class="mat-18" class="material-icons1" blue >delete</mat-icon>
+                            </button>
+                          </mat-cell>          
+                      </ng-container>  
+
+                      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+                </mat-table>
+              </div>  
+        </div>
+    </div>
+</form>

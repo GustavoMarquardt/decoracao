@@ -1,0 +1,149 @@
+<div class="body image">
+    <div class="container-fluid mb-0">
+      <div class="row d-flex flex-column justify-content-center align-items-center">
+
+        <div class="row d-flex justify-content-center m-1" >
+          <img src="../../../../assets/img/loog.jpeg"height="90px" width="130px">
+        </div>
+
+        <h4>
+          Crie uma conta !
+        </h4>
+
+        <h6>
+          Informe as informações do novo usuário 
+        </h6>     
+        
+        <mat-card class="col-4 mat-elevation-z5 mb-5">
+          
+           
+  
+            <!-- Calling GoogleAuth() Api from AuthService -->
+            <!-- <div class="d-flex justify-content-center m-2">
+              <mat-card type="button" (click)="AuthService.GoogleAuth()">
+                <img class="mr-2" src="../../../../assets/img/google.png">
+                <img src="../../../../assets/img/google-text.png">
+              </mat-card>
+            </div>  -->
+  
+   
+            
+            <div class="inicio text-center mt-4 mb-3">
+              Crie sua Conta :D
+            </div>
+          
+        <mat-card-content>
+
+            <form #signup="ngForm" (ngSubmit)="onSubmit(signup)">
+
+              <div class="row">
+                <mat-form-field class="col" appearance="outline">
+                  <mat-label>Nome</mat-label>
+                  <input  [(ngModel)]="user.name" type="text" required matInput name="nome" placeholder="Digite seu nome" #username>
+                  <mat-icon matSuffix>badge</mat-icon>
+                </mat-form-field>
+              </div>
+
+              <div class="row">
+                <mat-form-field class="col" appearance="outline">
+                  <mat-label>Sobrenome</mat-label>
+                  <input  [(ngModel)]="user.surname" type="text" required matInput name="nome" placeholder="Digite seu sobrenome" #username>
+                  <mat-icon matSuffix>badge</mat-icon>
+                </mat-form-field>
+              </div>
+
+
+              <div class="row">
+                <mat-form-field class="col" appearance="outline">
+                    <mat-label>Cidade</mat-label>
+                    <input  [(ngModel)]="user.cidade" type="text" required matInput name="nome" placeholder="Digite seu nome" #username>
+                    <mat-icon matSuffix>badge</mat-icon>
+                  </mat-form-field>
+              </div>
+
+              
+              <div class="row">
+                <mat-form-field class="col" appearance="outline">
+                    <mat-label>Endereço</mat-label>
+                    <input  [(ngModel)]="user.endereco" type="text" required matInput name="nome" placeholder="Digite seu endereço" #username>
+                    <mat-icon matSuffix>badge</mat-icon>
+                  </mat-form-field>
+              </div>
+
+
+              <div class="row">
+                <mat-form-field class="col" appearance="outline">
+                    <mat-label>Número</mat-label>
+                    <input  [(ngModel)]="user.numero" type="number" required matInput name="nome" placeholder="Digite seu número" #username>
+                    <mat-icon matSuffix>pin</mat-icon>
+                  </mat-form-field>
+              </div>
+
+              <div class="row">
+                <mat-form-field class="col" appearance="outline">
+                    <mat-label>CEP</mat-label>
+                    <input  [(ngModel)]="user.cep" type="number"mask ="00000-000" required matInput name="nome" placeholder="Digite seu CEP" #username>
+                    <mat-icon matSuffix>pin</mat-icon>
+                  </mat-form-field>
+              </div>
+
+
+
+
+              <div class="row">
+                <mat-form-field class="col" appearance="outline">
+                  <mat-label>Whatsapp</mat-label>
+                  <input type="text" [(ngModel)]="user.whatsapp" mask="(00) 00 00000-0000" required matInput name="whatsapp" placeholder="Digite seu whatsapp">
+                  <mat-icon matSuffix>dialpad</mat-icon>
+                </mat-form-field>
+              </div> 
+              
+              <div class="row">
+                <mat-form-field class="col" appearance="outline">
+                  <mat-label>CPF</mat-label>
+                  <input type="text" [(ngModel)]="user.cpf" mask ="000.000.000-00" required matInput name="cpf" placeholder="Digite seu CPF">
+                  <mat-icon matSuffix>pin</mat-icon>
+                </mat-form-field>
+              </div>
+
+              <div class="row">
+                <mat-form-field class="col" appearance="outline">
+                  <mat-label>RG</mat-label>
+                  <input type="text" [(ngModel)]="user.rg" mask ="00-000.000" required matInput name="rg" placeholder="Digite seu RG">
+                  <mat-icon matSuffix>confirmation_number</mat-icon>
+                </mat-form-field>
+              </div> 
+                            
+              
+
+            <div class="row">
+              <mat-form-field class="col" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="email" required  [(ngModel)]="user.email" matInput name="userName"  placeholder="Digite seu email" >
+                <mat-icon matSuffix>mail</mat-icon>
+              </mat-form-field>
+            </div>
+  
+            <div class="row">
+              <mat-form-field class="col" appearance="outline">
+                <mat-label>Senha</mat-label>
+                <input type="password" matInput name="userPassword" required ngModel placeholder="Digite sua senha" >
+                <mat-icon matSuffix>vpn_key</mat-icon>
+              </mat-form-field>
+            </div>            
+  
+            <div class="row m-1">
+              <button mat-raised-button class="col text-center" color="blue"                
+                type="submit"
+                [disabled]="!signup.form.valid"
+                >Cadastrar</button>
+            </div>  
+            
+          </form>
+  
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  

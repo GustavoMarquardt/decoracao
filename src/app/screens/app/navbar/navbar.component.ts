@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
@@ -20,10 +21,16 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     public breakpointObserver: BreakpointObserver,
+    public authService:AuthService
   ) { }
 
   ngOnInit(): void {
-    console.log('cheguei VAI CARALHO')
+  }
+
+  LogOut(){
+    window.confirm("Quer mesmo deslogar??")
+    this.authService.SignOut();
+
   }
 
 }

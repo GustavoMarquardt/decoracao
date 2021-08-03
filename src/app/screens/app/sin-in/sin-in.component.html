@@ -1,0 +1,74 @@
+<div class="body image">
+    <div class="teste container-fluid">
+      <div class="row d-flex flex-column justify-content-center align-items-center">        
+
+        <span class="row d-flex justify-content-center m-1" >
+            <!-- Fazer uma logo melhor renderizada :D -->
+          <img src="../../../../assets/img/loog.jpeg" height="100px" width="130px">
+        </span>
+
+        <h4>
+          Bem Vindo !
+        </h4>
+
+        <h6>
+          Entre com as informações de sua conta 
+        </h6>
+        
+        <mat-card class="col-4 mt-1 mat-elevation-z5"> 
+          <div class="inicio text-center">
+            Entre com
+          </div>
+
+          <!-- Calling GoogleAuth() Api from AuthService -->
+          <div class="d-flex justify-content-center m-2">
+            <mat-card type="button" (click)="authService.GoogleAuth()">
+              <img class="mr-2" src="../../../../assets/img/google.png">
+              <img src="../../../../assets/img/google-text.png">
+            </mat-card>
+          </div> 
+
+          <mat-divider class="mt-2"></mat-divider>
+          
+          <div class="inicio text-center mt-4">
+            Ou entre com seu login
+          </div>
+
+          <mat-card-content> 
+            <div class="row">
+              <mat-form-field class="col" appearance="outline">
+                <mat-label>Usuário</mat-label>
+                <input type="email" autofocus required matInput name="userName" placeholder="Digite seu e-mail" #userEmail>
+                <mat-icon matSuffix>mail</mat-icon>
+              </mat-form-field>
+            </div>
+  
+            <div class="row">
+              <mat-form-field class="col" appearance="outline">
+                <mat-label>Senha</mat-label>
+                <input type="password" required matInput name="password" placeholder="Digite sua senha" #userPassword>
+                <mat-icon matSuffix>vpn_key</mat-icon>
+              </mat-form-field>
+            </div>
+  
+            <div class="row m-1">
+              <button mat-raised-button class="col text-center" color="blue" 
+                (click)="authService.SignIn(userEmail.value, userPassword.value)">Entrar</button>
+            </div> 
+            
+  
+            <div class="row m-1">
+              <button mat-button class="col text-center" routerLink="/forgot-password">Esqueceu sua senha?</button>
+            </div>
+
+            <div class="row m-1">
+                <button mat-button class="col text-center" routerLink="sing-up">Não possue conta? <br>Crie aqui</button>
+              </div>
+  
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  
+

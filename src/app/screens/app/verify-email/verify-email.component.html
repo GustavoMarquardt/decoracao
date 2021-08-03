@@ -1,0 +1,31 @@
+<div class="body image">
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-center">
+        <mat-card class="col-4 mt-4 mat-elevation-z4">
+          <mat-card-content>
+  
+            <div class="row d-flex justify-content-center m-3" >
+              <img src="../../../assets/img/loog.jpeg" height="236px" width="194px" >
+            </div>  
+
+            <h3>Cadastro realizado com sucesso!</h3>          
+
+        <div class="formGroup" *ngIf="ngAuthService.userState as user">
+          <p class="text-center">Confirmação de email foi enviado para <strong>{{user.email}}</strong>.</p>
+        </div>
+
+        <div class="formGroup">
+          <button type="button" class="btn btn-block btn-success" (click)="ngAuthService.SendVerificationMail()">
+            Mandar novamente o email
+          </button>
+        </div>           
+  
+            <div class="row m-1">
+              <button mat-button class="col text-center" routerLink="/home">Voltar</button>
+            </div>
+  
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
