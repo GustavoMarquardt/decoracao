@@ -45,7 +45,9 @@ import {AngularFireDatabase} from '@angular/fire/database';
               
               public saveFileData(description:string,name:string,priceBuy:number,amount:number,category:string,fileUpload:FileUpload){
                 console.log('FILE DATA category:',category,'name:',name,'price:',priceBuy,'amount:',amount,'description:',description,'file:',fileUpload)
-                this.afs.doc(`produtos/${name}`).set({     
+                this.basePath = this.afs.createId();
+                this.afs.doc(`produtos/${ this.basePath}`).set({ 
+                  id!:this.basePath,    
                   name!:name,
                   category!:category,
                   priceBuy!:priceBuy,  

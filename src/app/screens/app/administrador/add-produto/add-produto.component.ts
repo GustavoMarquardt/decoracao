@@ -62,12 +62,16 @@ export class AddProdutoComponent implements OnInit {
 
 
   onSubmit(){
-    this.categoryCategory = this.selected;
-    this.produto.category = this.categoryCategory.category; 
-      console.log('APARECE NOME PLS',this.produto.category)
-      const file = this.selectedFiles.item(0);
-      this.currentFileUpload = new FileUpload(file!);
-      this.produtoService.pushFileToStorage(this.produto.description,this.produto.name,this.price,this.amount,this.produto.category,this.currentFileUpload)
+      
+
+        this.categoryCategory = this.selected;
+        this.produto.category = this.categoryCategory.category; 
+          console.log('APARECE NOME PLS',this.produto.category)
+          const file = this.selectedFiles.item(0);
+          this.currentFileUpload = new FileUpload(file!);
+          this.produtoService.pushFileToStorage(this.produto.description,this.produto.name,this.price,this.amount,this.produto.category,this.currentFileUpload)
+          this.navService.getAtrributes() 
+             
   }
 
   // category!:string;

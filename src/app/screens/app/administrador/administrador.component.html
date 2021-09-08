@@ -1,30 +1,39 @@
-<div class="mt-4 mr-4">
-    <div class="row align-items-start">
-      <div class="col">
-        <mat-card>
-            sidenav
-        </mat-card>
-      </div>
-      <div class="addProduto col">
-        <mat-card>
-          <div class="row">
-            <div class="col">
-              <div class="container">
-                <div class="row">
-                  <div class="col">
-                      <button mat-icon-button (click)="openDialogCategoria()">
-                        GERENTE CATEGORIA
-                      </button>
-                  </div>
-                    <div class="col">
-                        <button mat-icon-button (click)="openDialogProduto()">
-                        ADICIONAR PRODUTO
-                        </button>
+
+                <mat-card class="body m-0 m-3">
+                  <div class="filtro row d-flex justify-content-center mt-5">
+                    <mat-form-field class="filtro-input row d-flex justify-content-center m-1">
+                        <mat-label>Filtro de publicações</mat-label>
+                        <input matInput type="text" class="text" name="filtro" id="filtro" [formControl]="myControl" >
+                    </mat-form-field>
+                </div>   
+                      <!-- Aqui vão ficar os cards -->
+                      <div id="menu">
+                       
+                        <ul *ngFor="let produto of produtoMostraFiltrado" class="col-md-3 m-2 ml-5">
+                          <!-- <span class="border border-dark"> -->
+                          <div>
+                            <li>
+                              <div class="date d-inline col-sm-4 mt-3 mb-5 ml-5 mr- justify-content-center">
+                                {{produto.name}}
+                                </div> 
+                                  <img class="imgCard img-fluid mt-2 rounded" src="{{produto.url}}" width="300px" height="80px" (click)="openCatalogo(produto)">
+                                    <div class="col-sm  mt-3 mb-1 mr-2">
+                                    
+                                        Quantidade: {{produto.amount}}
+                                    
+                                    </div>
+                                    <div class=" col-sm  mt-3 mb-1 mr-2">
+                                        <h3>
+                                          preço: {{produto.priceBuy}}   
+                                        </h3>
+                                         
+                                        </div> 
+                            </li>  
+                          </div>
+                        <!-- </span> -->
+                        </ul>        
                     </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </mat-card>
-      </div>
-    </div>
+              </mat-card>
+      
+     
+           

@@ -1,4 +1,4 @@
-<mat-sidenav #drawer class="sidenav mat-elevation" fixedInViewport
+<!-- <mat-sidenav #drawer class="sidenav mat-elevation" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
 
@@ -13,11 +13,11 @@
                       <mat-icon>dialpad</mat-icon>
                       <span>login</span>
                     </button>
-                    <!-- <button mat-menu-item disabled>
+                   <button mat-menu-item disabled>
                       <mat-icon>voicemail</mat-icon>
                       <span>Check voice mail</span>
                     </button> -->
-                    <button mat-menu-item routerLink="administrador" routerLinkActive="active-list-item">
+                    <!-- <button mat-menu-item routerLink="administrador" routerLinkActive="active-list-item">
                       <mat-icon>notifications_off</mat-icon>
                       <span>Administrador</span>
                     </button>
@@ -29,4 +29,52 @@
             </div>
       </mat-toolbar>
         <router-outlet></router-outlet>    
-</mat-sidenav>
+</mat-sidenav> --> 
+
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav mat-elevation-z3" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <div class="logo-lateral">
+      <img class="m-4 mt-5"src="../assets/img/loog.jpeg"  height="120px" width="250px" >
+  </div>
+    <mat-nav-list style="padding: 0%;">
+      <a mat-list-item routerLink="administrador"  routerLinkActive="active-list-item">
+        <mat-icon mat-list-icon>person</mat-icon>
+        Catálogo
+      </a>
+      <mat-divider></mat-divider>
+
+      <a mat-list-item (click)="openDialogProduto()" routerLinkActive="active-list-item">
+        <mat-icon mat-list-icon color="blue">add</mat-icon>
+          Novo produto
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <a mat-list-item (click)="openDialogCategoria()" routerLinkActive="active-list-item">
+        <mat-icon mat-list-icon color="blue">manage_accounts</mat-icon>
+          Adicionar classe
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <!-- <a mat-list-item (click)="ngAuthService.SignOut()" routerLinkActive="active-list-item">
+        <mat-icon mat-list-icon color="blue">logout</mat-icon>
+          Sair
+      </a> -->
+
+      <mat-divider></mat-divider>
+
+        <!-- <div class="footer">
+          <mat-divider class="divisor"></mat-divider>
+          <i style="font-size: small;">Desenvolvido por </i><br>
+          <img src="../assets/img/loog.jpeg" width="120">
+        </div> -->
+
+    </mat-nav-list>      
+  </mat-sidenav>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
+

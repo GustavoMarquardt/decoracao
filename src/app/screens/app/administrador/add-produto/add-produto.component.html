@@ -13,6 +13,7 @@
                 required
                 #filterName
                 (change)="onSelectFile($event)"
+                required
                 >
             </label>                      
       </div>
@@ -39,7 +40,7 @@
             <div class="col-sm mt-3">
               <mat-form-field class="sub-service-full-width" appearance="fill">
                 <mat-label>Preço</mat-label>
-                <input matInput type="number"name="price" id="nameService"[(ngModel)]="price" required>
+                <input matInput   type="number"name="price" ui-money-mask id="nameService"[(ngModel)]="price" required>
             </mat-form-field>
             </div>
               <div class="col-sm mt-3">
@@ -60,7 +61,7 @@
                   </mat-form-field>
             </div>
             <div class="col-sm justify-content-center">
-              <button mat-icon-button color="#a09ea0a1" (click)="onSubmit()">
+              <button mat-icon-button color="#a09ea0a1" (click)="onSubmit()" [mat-dialog-close]="true" [disabled]="!f.valid">
                   ADICIONAR
                  </button> 
             </div>  

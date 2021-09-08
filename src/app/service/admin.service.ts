@@ -1,3 +1,4 @@
+import { FileUpload } from 'src/app/models/produto';
 import { Classificacao } from './../models/produto';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, CollectionReference } from '@angular/fire/firestore';
@@ -9,6 +10,8 @@ import { AngularFirestore, AngularFirestoreCollection, CollectionReference } fro
 
   
 export class AdminService {
+
+  produtosView = {} as FileUpload;
 
     constructor(
         public afs: AngularFirestore,
@@ -29,6 +32,13 @@ export class AdminService {
          ref.orderBy('class')
         )
          return category;
+       }
+
+
+       ProdutoSave(produto: FileUpload){
+        this.produtosView = produto;
+        localStorage.setItem('dadosEdit', JSON.stringify(this.produtosView));
+        JSON.parse(localStorage.getItem('dadosEdit') || '{ }');
        }
 
 }

@@ -39,6 +39,7 @@ import { CategoryComponent } from './screens/app/administrador/category/category
 import { SingUpComponent } from './screens/app/sing-up/sing-up.component';
 import { SinInComponent } from './screens/app/sin-in/sin-in.component';
 import { VerifyEmailComponent } from './screens/app/verify-email/verify-email.component';
+import { NgxCurrencyModule } from 'ngx-currency';
 
 
 
@@ -65,6 +66,7 @@ import { VerifyEmailComponent } from './screens/app/verify-email/verify-email.co
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     MatSidenavModule,
     MatIconModule,
@@ -81,6 +83,7 @@ import { VerifyEmailComponent } from './screens/app/verify-email/verify-email.co
     MatExpansionModule,
     MatToolbarModule,
     MatMenuModule,
+    NgxCurrencyModule,
     NgxMaskModule.forRoot({
       dropSpecialCharacters:false
     }),

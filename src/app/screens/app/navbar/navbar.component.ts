@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { AddProdutoComponent } from '../administrador/add-produto/add-produto.component';
+import { CategoryComponent } from '../administrador/category/category.component';
 
 @Component({
   selector: 'app-navbar',
@@ -21,7 +24,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     public breakpointObserver: BreakpointObserver,
-    public authService:AuthService
+    public authService:AuthService,
+    private dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -32,5 +36,15 @@ export class NavbarComponent implements OnInit {
     this.authService.SignOut();
 
   }
+
+  openDialogProduto(){
+    this.dialog.open(AddProdutoComponent)
+  }
+
+  openDialogCategoria(){
+    this.dialog.open(CategoryComponent)
+  }
+  
+
 
 }

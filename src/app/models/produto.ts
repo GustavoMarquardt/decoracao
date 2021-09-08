@@ -4,7 +4,7 @@ export class Classificacao{
 
 //Produto
 export class FileUpload {
-
+    id!:string;
     category!:string;
     name!:string;
     // cod!:string;
