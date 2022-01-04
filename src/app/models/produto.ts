@@ -12,10 +12,10 @@ export class FileUpload {
     priceBuy!:number;
     amount!:number;
     file:File;
-    url!:string;
-    
+    url!:any;
+
     constructor(file: File) {
         this.file = file;
       }
-   
+
 }

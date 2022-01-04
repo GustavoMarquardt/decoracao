@@ -11,22 +11,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-export class AuthService {  
+export class AuthService {
 
   userLogado = {} as Perfil;
 
 
 
-  userState: any;  
-  afAuthcurrentUser: any; 
-  dadosUser!: AngularFirestoreCollection<Perfil>  
-  
+  userState: any;
+  afAuthcurrentUser: any;
+  dadosUser!: AngularFirestoreCollection<Perfil>
+
   constructor(
     public ngZone: NgZone,
     public afAuth: AngularFireAuth,
     public router: Router,
     public afs: AngularFirestore,
-  ) 
+  )
   {
     this.afAuth.authState.subscribe((user: any) => {
     if (user) {
@@ -61,7 +61,7 @@ export class AuthService {
         cidade:user.cidade,
         endereco:user.endereco, // Naõ esta
         numero:user.numero, // Não esta
-        cep:user.cep // Não esta 
+        cep:user.cep // Não esta
     };
     return userRef.set(userState, {
       merge: true
@@ -96,9 +96,9 @@ export class AuthService {
         this.SetUserData(result.user);
       })
     //   Erro com Login de (firebase -> users/undefined)
-      // .catch((error: any) => {
-      //   window.alert(error.message);
-      // })
+      .catch((error: any) => {
+        window.alert(error.message);
+      })
       ;
   }
 
@@ -113,7 +113,7 @@ export class AuthService {
       }).catch((error: any) => {
         window.alert(error.message);
       });
-      
+
   }
 
   // Sign out
@@ -130,7 +130,7 @@ export class AuthService {
       .then(() => {
         this.router.navigate(['email-verification']);
       }))
-  }  
+  }
 
   // Reset Forggot password
   ForgotPassword(passwordResetEmail: any): any {
@@ -140,7 +140,7 @@ export class AuthService {
     }).catch((error: any) => {
       window.alert(error);
     });
-  }  
+  }
 
   AuthLogin(provider: any): any {
     return this.afAuth.signInWithPopup(provider)
@@ -152,10 +152,10 @@ export class AuthService {
     }).catch((error: any) => {
       window.alert(error);
     });
-  }   
-  
+  }
+
   // Sign in with Google
   GoogleAuth() {
     return this.AuthLogin(new firebase.auth.GoogleAuthProvider());
-  } 
+  }
 }

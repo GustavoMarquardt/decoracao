@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
       map(result => result.matches),
       shareReplay()
     );
-    
+
 
   constructor(
     public breakpointObserver: BreakpointObserver,
@@ -44,7 +44,7 @@ export class NavbarComponent implements OnInit {
   openDialogCategoria(){
     this.dialog.open(CategoryComponent)
   }
-  
+
 
 
 }

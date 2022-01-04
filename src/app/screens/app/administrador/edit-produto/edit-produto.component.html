@@ -1,0 +1,48 @@
+<mat-card class="cartao mt-5 mr-5"> 
+    <form  #f="ngForm">
+      <!-- Envio de Informações  -->
+        <h2>
+         Informações
+        </h2>
+
+      <div class=" cima  row  d-flex justifiy-content-">
+        <div class="name col-sm mb-3 ml-5 mr-5">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" name="name" id="name" [(ngModel)]="produtoEdit.name" required>
+        </div>
+
+        <div class="surename col-sm mb-3 ml-5 mr-5">
+          <label for="surname">Categoria</label>
+          <input type="text" class="form-control" name="surname" id="surname" [(ngModel)]="produtoEdit.category" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="email col-sm mb-3 ml-5 mr-5">
+          <label for="email">Preço</label>
+          <input type="text" class="form-control" name="email" id="email"  [(ngModel)]="produtoEdit.priceBuy" required>
+        </div>
+
+        <div class="cpf col-sm mb-3 ml-5 mr-5">
+          <label for="cpf">Quantidade</label>
+          <input type="text" class="form-control" name="cpf" id="cpf"  [(ngModel)]="produtoEdit.amount" required>
+        </div>
+        </div>  
+        <div class="col-sm">
+            <mat-form-field class="col-sm" appearance="outline">
+                <mat-label>Descrição do produto</mat-label>                  
+                  <textarea matInput [(ngModel)]="produtoEdit.description" placeholder="Coloque uma observação." name="descricao"
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="10"></textarea>
+                  </mat-form-field>
+        </div>
+        
+    
+        <button (click)="onEdit(produtoEdit)" [disabled]="!f.valid" type="submit" class="salvar btn btn-primary col-5 mt-1 ml-5" value="Salvar">Salvar dados</button>
+        <button (click)="deletProduto()" [disabled]="!f.valid" type="submit" class="excluir btn btn-primary col-5 mt-1 ml-5">Excluir cliente</button>        
+
+      
+    </form>
+  </mat-card>

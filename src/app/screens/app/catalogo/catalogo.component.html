@@ -1,0 +1,56 @@
+
+    <div class="col-sm">
+            <mat-card>
+                <div class="d-flex justify-content-center">
+                    <h1>
+                        {{produtoUnico.name}}
+                    </h1>
+                </div>
+
+                <div class=" d-flex justify-content-center">
+                    <img class="imgCard img-fluid mt-2 rounded" src="{{produtoUnico.url}}" width="600px" height="230px">
+                </div>
+                <div class="linha 1 mt-5">
+                    <div class="row">
+                        <div class="col">
+                        <h2> Nome : {{produtoUnico.name}} </h2>
+                        </div>
+                        <div class="col">
+                            <h2>  Categoria : {{produtoUnico.category}} </h2>
+                        </div>
+                        <!-- <div class="col">
+                            <h2>  Preço :  {{produtoUnico.priceBuy}} </h2>
+                        </div> -->
+                      </div>
+                </div>
+
+                <div class="linha 2 mt-5">
+                    <div class="row">
+                        <div class="col">
+                            <h2>  Preço :  {{produtoUnico.priceBuy}} </h2>
+                        </div>
+                        <div class="col">
+                            <h2>  Quantidade :  {{produtoUnico.amount}} </h2>
+                        </div>
+                      </div>
+                </div>
+
+                <div>
+                    <div class=" mt-5">
+                        <div class="col">
+                            <h2>Descrição:</h2>
+                       <h2>{{produtoUnico.description}}</h2>
+                        </div>
+                      </div>
+
+                </div>
+                    <div class="row d-flex justify-content-center">
+                        <button mat-raised-button (click)="openEditProduto(produtoUnico)">Editar Produto</button>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                      <button mat-raised-button (click)="openAdImg(produtoUnico)">Adicionar Imagens</button>
+                  </div>
+
+
+            </mat-card>
+    </div>

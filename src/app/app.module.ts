@@ -1,5 +1,6 @@
+import { EditProdutoComponent } from './screens/app/administrador/edit-produto/edit-produto.component';
 //random
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,10 +30,9 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 import { CatalogoComponent } from './screens/app/catalogo/catalogo.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
 import { AdministradorComponent } from './screens/app/administrador/administrador.component';
 import { AddProdutoComponent } from './screens/app/administrador/add-produto/add-produto.component';
 import { CategoryComponent } from './screens/app/administrador/category/category.component';
@@ -41,7 +41,8 @@ import { SinInComponent } from './screens/app/sin-in/sin-in.component';
 import { VerifyEmailComponent } from './screens/app/verify-email/verify-email.component';
 import { NgxCurrencyModule } from 'ngx-currency';
 
-
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { AddImgComponent } from './screens/app/catalogo/add-img/add-img.component';
 
 
 
@@ -57,7 +58,8 @@ import { NgxCurrencyModule } from 'ngx-currency';
     SingUpComponent,
     SinInComponent,
     VerifyEmailComponent,
-
+    EditProdutoComponent,
+    AddImgComponent,
 
   ],
   imports: [
@@ -71,18 +73,17 @@ import { NgxCurrencyModule } from 'ngx-currency';
     MatSidenavModule,
     MatIconModule,
     MatDividerModule,
-    MatFormFieldModule,
     MatListModule,
     MatCardModule,
     MatInputModule,
     MatTableModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatDialogModule,
     MatSelectModule,
     MatTabsModule,
     MatButtonModule,
     MatExpansionModule,
-    MatToolbarModule,
-    MatMenuModule,
     NgxCurrencyModule,
     NgxMaskModule.forRoot({
       dropSpecialCharacters:false

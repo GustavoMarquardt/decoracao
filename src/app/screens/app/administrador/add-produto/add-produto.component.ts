@@ -24,7 +24,7 @@ export class AddProdutoComponent implements OnInit {
 
   categoryTabela: any[] = [];
   categoryTabela$!: Observable<any[]>;
-  
+
   currentFileUpload!: FileUpload;
 
 
@@ -35,7 +35,7 @@ export class AddProdutoComponent implements OnInit {
     public navService: NavegadorService,
     public afs:AngularFirestore,
     public produtoService: ProdutoService,
-  ) {   
+  ) {
     this.navService.getAtrributes()
   }
 
@@ -62,16 +62,14 @@ export class AddProdutoComponent implements OnInit {
 
 
   onSubmit(){
-      
 
         this.categoryCategory = this.selected;
-        this.produto.category = this.categoryCategory.category; 
-          console.log('APARECE NOME PLS',this.produto.category)
+        this.produto.category = this.categoryCategory.category;
+          console.log('APARECE NOME PLS',this.produto.url)
           const file = this.selectedFiles.item(0);
           this.currentFileUpload = new FileUpload(file!);
           this.produtoService.pushFileToStorage(this.produto.description,this.produto.name,this.price,this.amount,this.produto.category,this.currentFileUpload)
-          this.navService.getAtrributes() 
-             
+          this.navService.getAtrributes()
   }
 
   // category!:string;

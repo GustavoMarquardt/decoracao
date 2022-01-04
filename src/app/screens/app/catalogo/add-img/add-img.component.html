@@ -1,0 +1,19 @@
+<div class="container">
+  <div>
+    <img class="imgCard img-fluid mt-2 rounded" src="{{produtoEdit.url}}" width="600px" height="230px">
+  </div>
+  <form  #f="ngForm" (ngSubmit)="onSubmit()">
+  <div class="row d-flex justify-content-center m-1 mt-5 ">
+    <label>
+      <div class="justify-content-center m-1 mt-2 ">
+        <img [src]="url" height="200"> <br />
+      </div>
+      <input type="file" required #filterName (change)="onSelectFile($event)" required>
+    </label>
+  </div>
+
+  <div class="button">
+       <button mat-raised-button (click)="onSubmit()" color="primary">Adicionar imagem</button>
+  </div>
+</form>
+</div>
